@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+import classes.Carro;
+
+public class Exercicio12 {
+  public static void executar(){
+
+    /* A concessionária de veículos “CARANGO VELHO” está vendendo os seus veículos com desconto. 
+    Faça um programa que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente de vários carros. 
+    O desconto deverá ser calculado de acordo com o ano do veículo. Até 2000 - 12% e acima de 2000 - 7%. 
+    O sistema deverá perguntar se deseja continuar calculando desconto até que a resposta seja: “(N) Não”. 
+    Informar total de carros com ano até 2000 e total geral. */
+
+    Scanner scan = new Scanner(System.in);
+    Carro carro = new Carro();
+
+    // System.out.println("Informe o ano do veículo: ");
+    // carro.ano = scan.nextInt();
+    // System.out.println("Informe o valor de venda do veículo: ");
+    // carro.valor = scan.nextDouble();
+    double desconto;
+    double valorFinal;
+    char opcao;
+
+    do {
+      System.out.println("Informe o ano do veículo: ");
+      carro.ano = scan.nextInt();
+      System.out.println("Informe o valor de venda do veículo: ");
+      carro.valor = scan.nextDouble();
+      if (carro.ano <= 2000) {
+        valorFinal = carro.valor - (carro.valor * 0.12);
+        System.out.printf("Valor do carro com o desconto: R$%.2f%n", valorFinal);
+      } else if (carro.ano > 2000) {
+        valorFinal = carro.valor - (carro.valor * 0.07);
+        System.out.printf("Valor do carro com o desconto: R$%.2f%n", valorFinal);
+      }
+      System.out.println("Deseja calcular o desconto para outro carro? (S / N)");
+      opcao = scan.next().charAt(0);
+    } while (opcao == 'S' || opcao == 's');
+  }
+}
