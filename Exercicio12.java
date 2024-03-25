@@ -14,11 +14,6 @@ public class Exercicio12 {
     Scanner scan = new Scanner(System.in);
     Carro carro = new Carro();
 
-    // System.out.println("Informe o ano do veículo: ");
-    // carro.ano = scan.nextInt();
-    // System.out.println("Informe o valor de venda do veículo: ");
-    // carro.valor = scan.nextDouble();
-    double desconto;
     double valorFinal;
     char opcao;
 
