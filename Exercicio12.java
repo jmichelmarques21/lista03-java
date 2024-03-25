@@ -15,6 +15,8 @@ public class Exercicio12 {
     Carro carro = new Carro();
 
     double valorFinal;
+    double valorTotal = 0;
+    int soma = 0;
     char opcao;
 
     do {
@@ -25,12 +27,19 @@ public class Exercicio12 {
       if (carro.ano <= 2000) {
         valorFinal = carro.valor - (carro.valor * 0.12);
         System.out.printf("Valor do carro com o desconto: R$%.2f%n", valorFinal);
+        valorTotal += valorFinal;
+        soma++;
       } else if (carro.ano > 2000) {
         valorFinal = carro.valor - (carro.valor * 0.07);
         System.out.printf("Valor do carro com o desconto: R$%.2f%n", valorFinal);
+        valorTotal += valorFinal;
+        soma++;
       }
       System.out.println("Deseja calcular o desconto para outro carro? (S / N)");
       opcao = scan.next().charAt(0);
     } while (opcao == 'S' || opcao == 's');
+    System.out.println("Foram calculados os preços de " + soma + " veículos.");
+    System.out.printf("O valor total dos carros vendidos é: R$%.2f%n", valorTotal);
+
   }
 }
