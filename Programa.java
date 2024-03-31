@@ -27,7 +27,7 @@ public class Programa {
     // Exercicio23.executar();
     // Exercicio24.executar();
     // Exercicio25.executar();
-     Exercicio26.executar();
+    // Exercicio26.executar();
 
   }
 } 
